@@ -2,28 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48bd186e-e116-4e8a-96bd-c19d477ca938" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/ArticleSpider.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArticleSpider/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArticleSpider/items.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArticleSpider/middlewares.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArticleSpider/pipelines.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArticleSpider/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArticleSpider/spiders/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArticleSpider/spiders/jobbole.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gen_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scrapy.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scrapy2.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scrapy3开始.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scrapy4开始业务逻辑.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scrapy初步配置.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ArticleSpider/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ArticleSpider/utils/common.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArticleSpider/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/ArticleSpider/items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArticleSpider/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ArticleSpider/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArticleSpider/spiders/jobbole.py" beforeDir="false" afterPath="$PROJECT_DIR$/ArticleSpider/spiders/jobbole.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +45,28 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
+    <configuration name="common" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ArticleSpider" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ArticleSpider/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ArticleSpider/utils/common.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="gen_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ArticleSpider" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -130,6 +136,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.common" />
         <item itemvalue="Python.jobbole" />
         <item itemvalue="Python.gen_test" />
       </list>
@@ -150,8 +157,17 @@
       <workItem from="1604052869370" duration="4570000" />
       <workItem from="1604058298044" duration="499000" />
       <workItem from="1604234181279" duration="3377000" />
-      <workItem from="1605106250381" duration="733000" />
+      <workItem from="1605106250381" duration="1105000" />
+      <workItem from="1605141844425" duration="6065000" />
     </task>
+    <task id="LOCAL-00001" summary="Scrapy use">
+      <created>1605107025751</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1605107025751</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,56 +177,70 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../" />
     </ignored-roots>
+    <MESSAGE value="Scrapy use" />
+    <option name="LAST_COMMIT_MESSAGE" value="Scrapy use" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603972149407">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1603972149407" />
+    <state x="734" y="0" key="CommitChangelistDialog2" timestamp="1605107024217">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="734" y="0" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1605107024217" />
+    <state width="425" height="454" key="DebuggerActiveHint" timestamp="1605142870237">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="425" height="454" key="DebuggerActiveHint/0.0.1536.864@0.0.1536.864" timestamp="1605142870237" />
     <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1605106297205">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1605106297205" />
-    <state width="1493" height="223" key="GridCell.Tab.0.bottom" timestamp="1604052428097">
+    <state x="625" y="367" key="Github.ShareDialog" timestamp="1605107084981">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1604052428097" />
-    <state width="1493" height="223" key="GridCell.Tab.0.center" timestamp="1604052428097">
+    <state x="625" y="367" key="Github.ShareDialog/0.0.1536.864@0.0.1536.864" timestamp="1605107084981" />
+    <state width="1493" height="257" key="GridCell.Tab.0.bottom" timestamp="1605147652963">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1604052428097" />
-    <state width="1493" height="223" key="GridCell.Tab.0.left" timestamp="1604052428097">
+    <state width="1493" height="257" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1605147652963" />
+    <state width="1493" height="257" key="GridCell.Tab.0.center" timestamp="1605147652963">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1604052428097" />
-    <state width="1493" height="223" key="GridCell.Tab.0.right" timestamp="1604052428097">
+    <state width="1493" height="257" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1605147652963" />
+    <state width="1493" height="257" key="GridCell.Tab.0.left" timestamp="1605147652963">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1604052428097" />
-    <state width="1493" height="260" key="GridCell.Tab.1.bottom" timestamp="1604052428088">
+    <state width="1493" height="257" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1605147652963" />
+    <state width="1493" height="257" key="GridCell.Tab.0.right" timestamp="1605147652963">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1604052428088" />
-    <state width="1493" height="260" key="GridCell.Tab.1.center" timestamp="1604052428088">
+    <state width="1493" height="257" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1605147652963" />
+    <state width="1493" height="257" key="GridCell.Tab.1.bottom" timestamp="1605147656547">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1604052428088" />
-    <state width="1493" height="260" key="GridCell.Tab.1.left" timestamp="1604052428088">
+    <state width="1493" height="257" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1605147656547" />
+    <state width="1493" height="257" key="GridCell.Tab.1.center" timestamp="1605147656547">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1604052428088" />
-    <state width="1493" height="260" key="GridCell.Tab.1.right" timestamp="1604052428088">
+    <state width="1493" height="257" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1605147656547" />
+    <state width="1493" height="257" key="GridCell.Tab.1.left" timestamp="1605147656546">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1604052428088" />
+    <state width="1493" height="257" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1605147656546" />
+    <state width="1493" height="257" key="GridCell.Tab.1.right" timestamp="1605147656547">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="257" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1605147656547" />
     <state x="270" y="77" key="SettingsEditor" timestamp="1605106291032">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="270" y="77" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1605106291032" />
-    <state width="440" height="414" key="XDebugger.FullValuePopup" timestamp="1604046837305">
+    <state width="440" height="414" key="XDebugger.FullValuePopup" timestamp="1605147703249">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="440" height="414" key="XDebugger.FullValuePopup/0.0.1536.864@0.0.1536.864" timestamp="1604046837305" />
+    <state width="440" height="414" key="XDebugger.FullValuePopup/0.0.1536.864@0.0.1536.864" timestamp="1605147703249" />
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1604044750456">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -221,23 +251,38 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/ArticleSpider/spiders/jobbole.py</url>
-          <line>42</line>
-          <option name="timeStamp" value="14" />
+          <line>64</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/ArticleSpider/spiders/jobbole.py</url>
-          <line>41</line>
-          <option name="timeStamp" value="15" />
+          <line>62</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/ArticleSpider/spiders/jobbole.py</url>
-          <line>45</line>
-          <option name="timeStamp" value="16" />
+          <line>76</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/ArticleSpider/spiders/jobbole.py</url>
-          <line>70</line>
-          <option name="timeStamp" value="17" />
+          <line>82</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ArticleSpider/utils/common.py</url>
+          <line>5</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ArticleSpider/utils/common.py</url>
+          <line>6</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ArticleSpider/pipelines.py</url>
+          <line>12</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -245,6 +290,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ArticleSpider$gen_test.coverage" NAME="gen_test Coverage Results" MODIFIED="1604050793665" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ArticleSpider$jobbole.coverage" NAME="jobbole Coverage Results" MODIFIED="1604050996505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ArticleSpider/spiders" />
-    <SUITE FILE_PATH="coverage/ArticleSpider$main.coverage" NAME="main Coverage Results" MODIFIED="1604051857624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ArticleSpider$main.coverage" NAME="main Coverage Results" MODIFIED="1605147652818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ArticleSpider$common.coverage" NAME="common Coverage Results" MODIFIED="1605147613537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ArticleSpider/utils" />
   </component>
 </project>
