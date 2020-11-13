@@ -22,9 +22,9 @@ class JobboleSpider(scrapy.Spider):
     :param response:
     :return:
     # """
-    post_nodes = response.css("#news_list .news_block")[:1]
+    post_nodes = response.css("#news_list .news_block")[1:2]
     for post_node in post_nodes:
-      image_url = post_node.css(".entry_summary a img::attr(href)").extract_first("")#获取图片
+      image_url = post_node.css(".entry_summary a img::attr(src)").extract_first("")#获取图片
       post_url = post_nodes.css("h2 a::attr(href)").extract_first("")#获取标题链接
       yield Request(url=parse.urljoin(response.url, post_url), meta={"front_image_url": image_url}, callback=self.parse_detail)#这里面的parse可以解决重复添加url的问题,记住方法加括号就是一个返回值了
 
@@ -74,7 +74,7 @@ class JobboleSpider(scrapy.Spider):
       article_Item["tags"] = tags
       article_Item["content"] = content
       article_Item["url"] = response.url
-      article_Item["front_image_url"] = response.meta.get("front_image_url","")#可以通过此方法获得传递过来的图片值
+      article_Item["front_image_url"] = [response.meta.get("front_image_url","")]#可以通过此方法获得传递过来的图片值
 
       #用yeid把上方法换成异步
       yield Request(url=parse.urljoin(response.url, "/NewsAjax/GetAjaxNewsInfo?contentId={}".format(post_id)),

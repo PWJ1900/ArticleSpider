@@ -6,6 +6,7 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+import os
 
 BOT_NAME = 'ArticleSpider'
 
@@ -64,6 +65,8 @@ ROBOTSTXT_OBEY = False
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'ArticleSpider.pipelines.ArticlespiderPipeline': 300,
+   # 'scrapy.pipelines.images.ImagesPipeline': 1
+  'ArticleSpider.pipelines.ArticleImagePipeline': 1
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -86,3 +89,8 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+#print(os.path.dirname(os.path.abspath(__file__)))
+IMAGES_URLS_FIELD = 'front_image_url' #此处的字段要和item里面的字段对应起来
+project_dir = os.path.dirname(os.path.abspath(__file__))
+IMAGES_STORE = os.path.join(project_dir, 'images')
