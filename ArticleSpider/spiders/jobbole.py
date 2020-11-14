@@ -74,7 +74,11 @@ class JobboleSpider(scrapy.Spider):
       article_Item["tags"] = tags
       article_Item["content"] = content
       article_Item["url"] = response.url
-      article_Item["front_image_url"] = [response.meta.get("front_image_url","")]#可以通过此方法获得传递过来的图片值
+      if response.meta.get("front_image_url", ""):
+        article_Item["front_image_url"] = [response.meta.get("front_image_url","")]#可以通过此方法获得传递过来的图片值
+      else:
+        article_Item["front_image_url"] = []
+
 
       #用yeid把上方法换成异步
       yield Request(url=parse.urljoin(response.url, "/NewsAjax/GetAjaxNewsInfo?contentId={}".format(post_id)),
@@ -93,5 +97,4 @@ class JobboleSpider(scrapy.Spider):
     article_item["url_object_id"] = common.get_md5(article_item["url"])
 
     yield article_item
-
 

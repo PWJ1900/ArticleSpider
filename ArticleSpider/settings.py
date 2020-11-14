@@ -66,7 +66,11 @@ ROBOTSTXT_OBEY = False
 ITEM_PIPELINES = {
    'ArticleSpider.pipelines.ArticlespiderPipeline': 300,
    # 'scrapy.pipelines.images.ImagesPipeline': 1
-  'ArticleSpider.pipelines.ArticleImagePipeline': 1
+  'ArticleSpider.pipelines.ArticleImagePipeline': 1,
+  'ArticleSpider.pipelines.JsonWithEncodingPipeline': 2,
+  'ArticleSpider.pipelines.JsonExporterPipeline': 3,
+  # 'ArticleSpider.pipelines.MysqlPipeline': 5, #这为同步数据库方法下面的异步数据库方法更好
+  'ArticleSpider.pipelines.MysqlTwistedPipeline': 5,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -94,3 +98,8 @@ ITEM_PIPELINES = {
 IMAGES_URLS_FIELD = 'front_image_url' #此处的字段要和item里面的字段对应起来
 project_dir = os.path.dirname(os.path.abspath(__file__))
 IMAGES_STORE = os.path.join(project_dir, 'images')
+
+MYSQL_HOST = "127.0.0.1"
+MYSQL_DBNAME = "article_spider"
+MYSQL_USER = "root"
+MYSQL_PASSWORD = "940731286"
