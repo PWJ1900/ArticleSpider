@@ -6,7 +6,7 @@ import re
 
 import scrapy
 
-from scrapy.loader.processors import MapCompose, TakeFirst, Identity,Join
+from itemloaders.processors import MapCompose, TakeFirst, Identity, Join
 from scrapy.loader import ItemLoader
 
 

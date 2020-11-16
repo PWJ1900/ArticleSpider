@@ -1,16 +1,16 @@
 import json
 import re
-from urllib import parse#此方法使用url加入
+from urllib import parse  # 此方法使用url加入
 
 import requests
-import scrapy#scrapy是异步io框架 没有多线程，没有引入消息队列
+import scrapy  # scrapy是异步io框架 没有多线程，没有引入消息队列
 from scrapy import Request
-
 
 from ArticleSpider.utils import common
 from ArticleSpider.items import JoBoleArticleItem, ArticleItemLoader
 
 from scrapy.loader import ItemLoader
+
 
 class JobboleSpider(scrapy.Spider):
   name = 'jobbole'
@@ -24,33 +24,32 @@ class JobboleSpider(scrapy.Spider):
     :param response:
     :return:
     # """
-    post_nodes = response.css("#news_list .news_block")[1:2]
+    post_nodes = response.css("#news_list .news_block")#[1:2]
     for post_node in post_nodes:
-      image_url = post_node.css(".entry_summary a img::attr(src)").extract_first("")#获取图片
-      post_url = post_nodes.css("h2 a::attr(href)").extract_first("")#获取标题链接
-      yield Request(url=parse.urljoin(response.url, post_url), meta={"front_image_url": image_url}, callback=self.parse_detail)#这里面的parse可以解决重复添加url的问题,记住方法加括号就是一个返回值了
+      image_url = post_node.css(".entry_summary a img::attr(src)").extract_first("")  # 获取图片
+      if image_url.startswith("//"):
+        image_url = "https:" + image_url
+      post_url = post_node.css("h2 a::attr(href)").extract_first("")  # 获取标题链接
+      yield Request(url=parse.urljoin(response.url, post_url), meta={"front_image_url": image_url},
+                    callback=self.parse_detail)  # 这里面的parse可以解决重复添加url的问题,记住方法加括号就是一个返回值了
 
-      #下一页的提取 这边分别用css和xpath进行操作如果用的xpath函数可以不用if判断
-    #Way1
+      # 下一页的提取 这边分别用css和xpath进行操作如果用的xpath函数可以不用if判断
+    # Way1
     # next_url = response.css("div.pager a:last-child::text").extract_first("")
     # if next_url == "Next >":
     #   next_url = response.css("div.pager a:last-child::attr(href)").extract_first("")
     #   yield Request(url=parse.urljoin(response.url, next_url), callback=self.parse)
 
-
-    #Way2
-    # next_url = response.xpath("//a[contains(text(),'Next >')]/@href").extract_first("")
-    # yield Request(url=parse.urljoin(response.url, next_url), callback=self.parse)
-
-
+    # Way2
+    next_url = response.xpath("//a[contains(text(),'Next >')]/@href").extract_first("")
+    yield Request(url=parse.urljoin(response.url, next_url), callback=self.parse)
 
   def parse_detail(self, response):
-    match_re =re.match(".*?(\d+)", response.url)#先判断url有没有id
+    match_re = re.match(".*?(\d+)", response.url)  # 先判断url有没有id
     if match_re:
       post_id = match_re.group(1)  # 此处提取post_id来给下面的的id赋值
 
-      #article_Item = JoBoleArticleItem()
-
+      # article_Item = JoBoleArticleItem()
 
       # title = response.css("#news_title a::text").extract_first("")
       # time = response.css("#news_info .time::text").extract_first("")
@@ -81,20 +80,19 @@ class JobboleSpider(scrapy.Spider):
       # else:
       #   article_Item["front_image_url"] = []
 
-      item_loader = ArticleItemLoader(item=JoBoleArticleItem(), response=response)#记住这里的ArticleItemLoader类为items里自定义的方法
+      item_loader = ArticleItemLoader(item=JoBoleArticleItem(),
+                                      response=response)  # 记住这里的ArticleItemLoader类为items里自定义的方法
       item_loader.add_css("title", "#news_title a::text")
       item_loader.add_css("content", "#news_content")
       item_loader.add_css("tags", ".news_tags a::text")
       item_loader.add_css("time", "#news_info .time::text")
       item_loader.add_value("url", response.url)
-      item_loader.add_value("front_image_url", response.meta.get("front_image_url", ""))
+      if response.meta.get("front_image_url", []):
+        item_loader.add_value("front_image_url", response.meta.get("front_image_url", []))
 
-
-
-
-      #用yeid把上方法换成异步
+      # 用yeid把上方法换成异步
       yield Request(url=parse.urljoin(response.url, "/NewsAjax/GetAjaxNewsInfo?contentId={}".format(post_id)),
-                    meta={"article_item": item_loader, "url":response.url}, callback=self.parse_nums)
+                    meta={"article_item": item_loader, "url": response.url}, callback=self.parse_nums)
 
   def parse_nums(self, response):
     # article_item = response.meta.get("article_item", "")
@@ -108,15 +106,12 @@ class JobboleSpider(scrapy.Spider):
     # article_item["comment_nums"] = comment_nums
     # article_item["url_object_id"] = common.get_md5(article_item["url"])
 
-
     item_loader = response.meta.get("article_item", "")
     j_data = json.loads(response.text)
     item_loader.add_value("praise_nums", j_data["DiggCount"])
     item_loader.add_value("fav_nums", j_data["TotalView"])
     item_loader.add_value("comment_nums", j_data["CommentCount"])
-    item_loader.add_value("url_object_id", common.get_md5(response.meta.get("url", "")))#由于url要做md5处理因为此时item里以及没有url
+    item_loader.add_value("url_object_id", common.get_md5(response.meta.get("url", "")))  # 由于url要做md5处理因为此时item里以及没有url
     article_item = item_loader.load_item()
 
-
     yield article_item
-
