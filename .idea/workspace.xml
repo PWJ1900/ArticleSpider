@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="48bd186e-e116-4e8a-96bd-c19d477ca938" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArticleSpider/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/ArticleSpider/pipelines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArticleSpider/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ArticleSpider/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArticleSpider/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/ArticleSpider/items.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ArticleSpider/spiders/jobbole.py" beforeDir="false" afterPath="$PROJECT_DIR$/ArticleSpider/spiders/jobbole.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -159,7 +158,9 @@
       <workItem from="1605141844425" duration="7047000" />
       <workItem from="1605237736018" duration="38000" />
       <workItem from="1605263554820" duration="4902000" />
-      <workItem from="1605353190855" duration="9301000" />
+      <workItem from="1605353190855" duration="9422000" />
+      <workItem from="1605450594114" duration="601000" />
+      <workItem from="1605484260740" duration="3569000" />
     </task>
     <task id="LOCAL-00001" summary="Scrapy use">
       <created>1605107025751</created>
@@ -182,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605268197347</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Scrapy use">
+      <created>1605362675464</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1605362675464</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,14 +208,14 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1603972149407" />
-    <state x="734" y="0" key="CommitChangelistDialog2" timestamp="1605268195526">
+    <state x="734" y="0" key="CommitChangelistDialog2" timestamp="1605362673928">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="734" y="0" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1605268195526" />
-    <state width="831" height="454" key="DebuggerActiveHint" timestamp="1605267153681">
+    <state x="734" y="0" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1605362673928" />
+    <state width="989" height="454" key="DebuggerActiveHint" timestamp="1605485886764">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="831" height="454" key="DebuggerActiveHint/0.0.1536.864@0.0.1536.864" timestamp="1605267153681" />
+    <state width="989" height="454" key="DebuggerActiveHint/0.0.1536.864@0.0.1536.864" timestamp="1605485886764" />
     <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1605106297205">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -216,50 +224,50 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="625" y="367" key="Github.ShareDialog/0.0.1536.864@0.0.1536.864" timestamp="1605107084981" />
-    <state width="1493" height="257" key="GridCell.Tab.0.bottom" timestamp="1605361837222">
+    <state width="1493" height="257" key="GridCell.Tab.0.bottom" timestamp="1605487600724">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="257" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1605361837222" />
-    <state width="1493" height="257" key="GridCell.Tab.0.center" timestamp="1605361837222">
+    <state width="1493" height="257" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1605487600724" />
+    <state width="1493" height="257" key="GridCell.Tab.0.center" timestamp="1605487600723">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="257" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1605361837222" />
-    <state width="1493" height="257" key="GridCell.Tab.0.left" timestamp="1605361837222">
+    <state width="1493" height="257" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1605487600723" />
+    <state width="1493" height="257" key="GridCell.Tab.0.left" timestamp="1605487600723">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="257" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1605361837222" />
-    <state width="1493" height="257" key="GridCell.Tab.0.right" timestamp="1605361837222">
+    <state width="1493" height="257" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1605487600723" />
+    <state width="1493" height="257" key="GridCell.Tab.0.right" timestamp="1605487600723">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="257" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1605361837222" />
-    <state width="1493" height="257" key="GridCell.Tab.1.bottom" timestamp="1605361840235">
+    <state width="1493" height="257" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1605487600723" />
+    <state width="1493" height="257" key="GridCell.Tab.1.bottom" timestamp="1605487600724">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="257" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1605361840235" />
-    <state width="1493" height="257" key="GridCell.Tab.1.center" timestamp="1605361840235">
+    <state width="1493" height="257" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1605487600724" />
+    <state width="1493" height="257" key="GridCell.Tab.1.center" timestamp="1605487600724">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="257" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1605361840235" />
-    <state width="1493" height="257" key="GridCell.Tab.1.left" timestamp="1605361840235">
+    <state width="1493" height="257" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1605487600724" />
+    <state width="1493" height="257" key="GridCell.Tab.1.left" timestamp="1605487600724">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="257" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1605361840235" />
-    <state width="1493" height="257" key="GridCell.Tab.1.right" timestamp="1605361840235">
+    <state width="1493" height="257" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1605487600724" />
+    <state width="1493" height="257" key="GridCell.Tab.1.right" timestamp="1605487600724">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="257" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1605361840235" />
+    <state width="1493" height="257" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1605487600724" />
     <state x="270" y="77" key="SettingsEditor" timestamp="1605106291032">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="270" y="77" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1605106291032" />
-    <state x="325" y="267" key="Vcs.Push.Dialog.v2" timestamp="1605268347757">
+    <state x="325" y="267" key="Vcs.Push.Dialog.v2" timestamp="1605362700680">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="325" y="267" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1605268347757" />
-    <state width="440" height="414" key="XDebugger.FullValuePopup" timestamp="1605358407695">
+    <state x="325" y="267" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1605362700680" />
+    <state width="440" height="414" key="XDebugger.FullValuePopup" timestamp="1605485834457">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="440" height="414" key="XDebugger.FullValuePopup/0.0.1536.864@0.0.1536.864" timestamp="1605358407695" />
+    <state width="440" height="414" key="XDebugger.FullValuePopup/0.0.1536.864@0.0.1536.864" timestamp="1605485834457" />
     <state x="470" y="219" key="git4idea.merge.GitPullDialog" timestamp="1605268441463">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -274,22 +282,22 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/ArticleSpider/spiders/jobbole.py</url>
-          <line>64</line>
+          <line>66</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/ArticleSpider/spiders/jobbole.py</url>
-          <line>62</line>
+          <line>64</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/ArticleSpider/spiders/jobbole.py</url>
-          <line>77</line>
+          <line>79</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/ArticleSpider/spiders/jobbole.py</url>
-          <line>86</line>
+          <line>98</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -309,7 +317,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/ArticleSpider/spiders/jobbole.py</url>
-          <line>98</line>
+          <line>120</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -357,13 +365,23 @@
           <line>115</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ArticleSpider/spiders/jobbole.py</url>
+          <line>95</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="item_loader.default_item_class" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ArticleSpider$gen_test.coverage" NAME="gen_test Coverage Results" MODIFIED="1604050793665" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ArticleSpider$jobbole.coverage" NAME="jobbole Coverage Results" MODIFIED="1604050996505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ArticleSpider/spiders" />
-    <SUITE FILE_PATH="coverage/ArticleSpider$main.coverage" NAME="main Coverage Results" MODIFIED="1605361837103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ArticleSpider$main.coverage" NAME="main Coverage Results" MODIFIED="1605487325345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ArticleSpider$common.coverage" NAME="common Coverage Results" MODIFIED="1605147613537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ArticleSpider/utils" />
   </component>
 </project>

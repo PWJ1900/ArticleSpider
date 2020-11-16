@@ -8,7 +8,9 @@ from scrapy import Request
 
 
 from ArticleSpider.utils import common
-from ArticleSpider.items import JoBoleArticleItem
+from ArticleSpider.items import JoBoleArticleItem, ArticleItemLoader
+
+from scrapy.loader import ItemLoader
 
 class JobboleSpider(scrapy.Spider):
   name = 'jobbole'
@@ -47,54 +49,74 @@ class JobboleSpider(scrapy.Spider):
     if match_re:
       post_id = match_re.group(1)  # 此处提取post_id来给下面的的id赋值
 
-      article_Item = JoBoleArticleItem()
+      #article_Item = JoBoleArticleItem()
 
 
-      title = response.css("#news_title a::text").extract_first("")
-      time = response.css("#news_info .time::text").extract_first("")
-      match_re = re.match(".*?(\d+.*)", time)
-      if match_re:
-        time = match_re.group(1)
-      content = response.css("#news_content").extract()[0]
-      tag_list = response.css(".news_tags a::text").extract()
+      # title = response.css("#news_title a::text").extract_first("")
+      # time = response.css("#news_info .time::text").extract_first("")
+      # match_re = re.match(".*?(\d+.*)", time)
+      # if match_re:
+      #   time = match_re.group(1)
+      # content = response.css("#news_content").extract()[0]
+      # tag_list = response.css(".news_tags a::text").extract()
+      #
+      # # title = response.xpath("//*[@id='news_title']//a/text()").extract_first("")
+      # # time = response.xpath("//*[@id='news_info']//*[@class='time']/text()").extract_first("")
+      # # content = response.xpath("//*[@id='news_content']").extract()[0]
+      # # tag_list = response.xpath("//*[@class='news_tags']//a/text()").extract()
+      # tags = ",".join(tag_list)
+      #
+      #
+      #
+      # # html = requests.get(parse.urljoin(response.url, "/NewsAjax/GetAjaxNewsInfo?contentId={}".format(post_id)))#注意因为requests是同步的而这里用的是一个异步的方法，所以换异步的方法实现,    得加/
+      # # j_data = json.loads(html.text)
+      #
+      # article_Item["title"] = title#这里面一定要确保key是在item里面存在的
+      # article_Item["time"] = time
+      # article_Item["tags"] = tags
+      # article_Item["content"] = content
+      # article_Item["url"] = response.url
+      # if response.meta.get("front_image_url", ""):
+      #   article_Item["front_image_url"] = [response.meta.get("front_image_url","")]#可以通过此方法获得传递过来的图片值
+      # else:
+      #   article_Item["front_image_url"] = []
 
-      # title = response.xpath("//*[@id='news_title']//a/text()").extract_first("")
-      # time = response.xpath("//*[@id='news_info']//*[@class='time']/text()").extract_first("")
-      # content = response.xpath("//*[@id='news_content']").extract()[0]
-      # tag_list = response.xpath("//*[@class='news_tags']//a/text()").extract()
-      tags = ",".join(tag_list)
+      item_loader = ArticleItemLoader(item=JoBoleArticleItem(), response=response)#记住这里的ArticleItemLoader类为items里自定义的方法
+      item_loader.add_css("title", "#news_title a::text")
+      item_loader.add_css("content", "#news_content")
+      item_loader.add_css("tags", ".news_tags a::text")
+      item_loader.add_css("time", "#news_info .time::text")
+      item_loader.add_value("url", response.url)
+      item_loader.add_value("front_image_url", response.meta.get("front_image_url", ""))
 
 
-
-      # html = requests.get(parse.urljoin(response.url, "/NewsAjax/GetAjaxNewsInfo?contentId={}".format(post_id)))#注意因为requests是同步的而这里用的是一个异步的方法，所以换异步的方法实现,    得加/
-      # j_data = json.loads(html.text)
-
-      article_Item["title"] = title#这里面一定要确保key是在item里面存在的
-      article_Item["time"] = time
-      article_Item["tags"] = tags
-      article_Item["content"] = content
-      article_Item["url"] = response.url
-      if response.meta.get("front_image_url", ""):
-        article_Item["front_image_url"] = [response.meta.get("front_image_url","")]#可以通过此方法获得传递过来的图片值
-      else:
-        article_Item["front_image_url"] = []
 
 
       #用yeid把上方法换成异步
       yield Request(url=parse.urljoin(response.url, "/NewsAjax/GetAjaxNewsInfo?contentId={}".format(post_id)),
-                    meta={"article_item": article_Item}, callback=self.parse_nums)
+                    meta={"article_item": item_loader, "url":response.url}, callback=self.parse_nums)
 
   def parse_nums(self, response):
-    article_item = response.meta.get("article_item", "")
-    j_data = json.loads(response.text)
-    praise_nums = j_data["DiggCount"]
-    fav_nums = j_data["TotalView"]
-    comment_nums = j_data["CommentCount"]
+    # article_item = response.meta.get("article_item", "")
+    # j_data = json.loads(response.text)
+    # praise_nums = j_data["DiggCount"]
+    # fav_nums = j_data["TotalView"]
+    # comment_nums = j_data["CommentCount"]
+    #
+    # # article_item["praise_nums"] = praise_nums
+    # article_item["fav_nums"] = fav_nums
+    # article_item["comment_nums"] = comment_nums
+    # article_item["url_object_id"] = common.get_md5(article_item["url"])
 
-    article_item["praise_nums"] = praise_nums
-    article_item["fav_nums"] = fav_nums
-    article_item["comment_nums"] = comment_nums
-    article_item["url_object_id"] = common.get_md5(article_item["url"])
+
+    item_loader = response.meta.get("article_item", "")
+    j_data = json.loads(response.text)
+    item_loader.add_value("praise_nums", j_data["DiggCount"])
+    item_loader.add_value("fav_nums", j_data["TotalView"])
+    item_loader.add_value("comment_nums", j_data["CommentCount"])
+    item_loader.add_value("url_object_id", common.get_md5(response.meta.get("url", "")))#由于url要做md5处理因为此时item里以及没有url
+    article_item = item_loader.load_item()
+
 
     yield article_item
 
